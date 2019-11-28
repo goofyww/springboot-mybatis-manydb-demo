@@ -13,11 +13,12 @@ public class SysDicServiceImplTest extends DemoApplicationTests {
 
     @Test
     public void findById1Test() {
-        Assert.assertEquals(sysDicService.findById1(3).getName(), "包含");
+        Assert.assertEquals(sysDicService.findByIdA(3).getName(), "包含");
     }
 
     @Test
     public void findById2Test() {
-        Assert.assertEquals(sysDicService.findById2(3).getName(), "包含");
+        Assert.assertEquals(sysDicService.findByIdB(3).getName(), "包含");
     }
+
 }

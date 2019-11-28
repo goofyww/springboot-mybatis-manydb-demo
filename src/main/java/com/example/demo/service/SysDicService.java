@@ -4,7 +4,7 @@ import com.example.demo.domain.SysDic;
 
 public interface SysDicService {
 
-    SysDic findById1(Integer id);
+    SysDic findByIdA(Integer id);
 
-    SysDic findById2(Integer id);
+    SysDic findByIdB(Integer id);
 }

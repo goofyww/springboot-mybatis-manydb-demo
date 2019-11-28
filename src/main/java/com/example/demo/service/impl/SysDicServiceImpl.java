@@ -1,29 +1,32 @@
 package com.example.demo.service.impl;
 
-import com.example.demo.annotation.RouteDataSource;
-import com.example.demo.comm.DataSources;
-import com.example.demo.dao.SysDicMapper;
 import com.example.demo.domain.SysDic;
+import com.example.demo.primary.dao.SysDicMapper;
 import com.example.demo.service.SysDicService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+@Slf4j
 @Service
 public class SysDicServiceImpl implements SysDicService {
 
     @Autowired
-    private SysDicMapper sysDicMapper;
+    private SysDicMapper sysDicMapperA;
+
+    @Autowired
+    private com.example.demo.secondary.dao.SysDicMapper sysDicMapperB;
 
     @Override
-    @RouteDataSource(DataSources.PRIMARY)
-    public SysDic findById1(Integer id) {
-        return sysDicMapper.selectByPrimaryKey(id);
+    public SysDic findByIdA(Integer id) {
+        log.info("primary 数据源执行");
+        return sysDicMapperA.selectByPrimaryKey(id);
     }
 
     @Override
-    @RouteDataSource(DataSources.SECONDARY)
-    public SysDic findById2(Integer id) {
-        return sysDicMapper.selectByPrimaryKey(id);
+    public SysDic findByIdB(Integer id) {
+        log.info("secondary 数据源执行");
+        return sysDicMapperB.selectByPrimaryKey(id);
     }
 
 }

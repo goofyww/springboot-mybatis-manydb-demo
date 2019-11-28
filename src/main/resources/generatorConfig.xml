@@ -49,7 +49,7 @@
         <!-- 生成DAO的包名和位置-->
         <javaClientGenerator
                 type="XMLMAPPER"
-                targetPackage="com.example.demo.dao"
+                targetPackage="com.example.demo.master.dao"
                 targetProject="src/main/java">
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>

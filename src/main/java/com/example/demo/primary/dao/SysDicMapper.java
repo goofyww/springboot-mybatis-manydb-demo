@@ -1,9 +1,9 @@
-package com.example.demo.dao;
+package com.example.demo.primary.dao;
 
 import com.example.demo.domain.SysDic;
 import org.springframework.stereotype.Repository;
 
-@Repository
+@Repository("sysDicMapperA")
 public interface SysDicMapper {
 
     int deleteByPrimaryKey(Integer id);
@@ -17,5 +17,5 @@ public interface SysDicMapper {
     int updateByPrimaryKeySelective(SysDic record);
 
     int updateByPrimaryKey(SysDic record);
-    
+
 }
